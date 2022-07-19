@@ -10,7 +10,8 @@ import { CreateNewPassword } from '../components/Auth/CreateNewPassword/CreateNe
 function App() {
   return (
     <div className="App">
-      счфквы-фзз
+      <Registration />
+      <Login />
     </div>
   );
 }
