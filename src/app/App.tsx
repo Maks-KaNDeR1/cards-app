@@ -13,6 +13,8 @@ function App() {
       <Registration />
       <Login />
       <ForgotPassword />
+      <CreateNewPassword />
+      <CheckEmail />
     </div>
   );
 }
