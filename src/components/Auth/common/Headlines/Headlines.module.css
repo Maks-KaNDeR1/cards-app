@@ -1,0 +1,23 @@
+
+
+.Headlock {
+	margin: 16px;
+	font-weight: 600;
+	font-size: 32px;
+	/* identical to box height */
+	text-align: center;
+	color: #2D2E46;
+}
+
+
+.lowerLevel {
+	margin: 20px;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 33px;
+	/* identical to box height */
+
+	text-align: center;
+	color: #2D2E46;
+}

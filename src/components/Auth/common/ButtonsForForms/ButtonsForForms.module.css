@@ -1,0 +1,44 @@
+.cancelButton {
+	cursor: pointer;
+	border: none;
+	background-image: linear-gradient(to right,
+	#D7D8EF 0%, #cacbf2 51%, #4a4d89 100%);
+	color: #21268F;
+    
+    letter-spacing: 1px;
+    border-radius: 30px;
+    background-size: 200% auto;
+	height: 36px;
+	width: 124px;
+	margin: 62px 0 0 33px;
+	font-size: 17px;
+    transition: .5s;
+}
+
+.mainButton {
+    border: none;
+	cursor: pointer;
+	color: white;
+	box-shadow: 0px 4px 18px rgba(33, 38, 143, 0.35), inset 0px 1px 0px rgba(255, 255, 255, 0.3);
+	background-image: linear-gradient(to right,
+	 #21278fe0 0%, #44aeff 51%, rgba(13, 0, 255, 0.729) 100%);
+   
+     letter-spacing: 1px;
+    border-radius: 30px;
+    background-size: 200% auto;
+	height: 36px;
+	min-width: 187px;
+	margin: 62px 33px 0 36px;
+    transition: .5s;
+	font-size: 17px;
+}
+
+.mainButton:hover {
+	color: #010335;
+	background-position: right center;
+}
+
+.cancelButton:hover {
+	color: #fff;
+	background-position: right center;
+}
