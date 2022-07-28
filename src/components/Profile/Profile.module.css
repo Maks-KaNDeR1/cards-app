@@ -1,6 +1,4 @@
-
-
-.block {
+.profileBlock {
 	position: relative;
 	width: 1280px;
 	height: 720px;
@@ -17,19 +15,46 @@
 	border-radius: 8px;
 }
 
+.avatar {
+	position: relative;
+	text-align: center;
+	margin-top: 15px;
+}
 
-.form label {
+.avatar img {
+	height: 116px;
+	width: 116px;
+	border-radius: 50%;
+}
+
+.avatar i {
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 55%;
+
+	padding: 7px;
+	border-radius: 50%;
+	border: 1px solid #fff;
+	color: rgba(0, 0, 0, 0.501);
+	background-color: #24254a6a;
+	opacity: 0.9;
+}
+
+.label {
 	font-family: 'SF UI Display';
 	font-style: normal;
+
 	font-weight: 400;
-	font-size: 13px;
+	/* font-size: 14px; */
 	line-height: 20px;
 
 	color: #24254A;
+
 	opacity: 0.5;
 }
 
-p {
+.form p {
 	position: relative;
 	margin-left: 33px;
 }
@@ -38,23 +63,11 @@ p {
 	width: 339px;
 	border: none;
 	border-bottom: 3px solid #bfbfbf;
+
 	background-color: transparent;
 	color: inherit;
 	outline: none;
 	opacity: 0.8;
 	z-index: 2;
 	position: relative;
-}
-
-.form span {
-	cursor: pointer;
-	right: 11%;
-	position: absolute;
-}
-
-.error {
-	color: red;
-	font-size: 13px;
-	margin: -11px 1px 1px 33px;
-	position: absolute;
 }

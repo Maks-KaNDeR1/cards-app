@@ -41,7 +41,7 @@ export const ForgotPassword = () => {
                     {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                         <form onSubmit={handleSubmit} className={styles.form}>
 
-                            <Headlines lowerLevel='Forgot your password?' />
+                            <Headlines Headlock lowerLevel='Forgot your password?' />
 
                             <p style={{ marginTop: '77px' }}>
                                 <label htmlFor={`email`}>Email</label><br />

@@ -15,7 +15,7 @@ export function CheckEmail() {
     <div>
       <div className={styles.block}>
         <div className={styles.form}>
-          <Headlines />
+          <Headlines Headlock />
           <div className={styles.itemSvg} >
             <CheckEmailIcons />
           </div>

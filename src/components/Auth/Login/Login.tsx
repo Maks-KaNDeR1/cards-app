@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Formik } from "formik";
 import * as yup from 'yup'
 import s from './Login.module.css';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../utils/hook';
 import Headlines from '../common/Headlines/Headlines';
 import { login } from '../auth-reducer';
@@ -12,9 +12,8 @@ import { Checkbox } from 'antd';
 
 export const Login = () => {
 
-    const isLoggedIn = useAppSelector(state => state.auth)
+    const isAuth = useAppSelector(state => state.auth.isAuth)
     const dispatch = useAppDispatch()
-    const navigate = useNavigate()
 
     const [eye, setEye] = useState(true)
     const handleClick = () => {
@@ -37,10 +36,15 @@ export const Login = () => {
     }
 
     const submitHandler = (values: SubmitHandlerType) => {
-        // dispatch(login(values.email, values.password, values.rememberMe ))
+        const data = (
+            values.email,
+            values.password,
+            values.remember
+        )
+        dispatch(login(data))
     }
 
-    // if (isLoggedIn) {
+    // if (isAuth) {
     //     return <Navigate to={`/profile`} />
     // }
 
@@ -58,7 +62,7 @@ export const Login = () => {
             >
                 {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                     <form onSubmit={handleSubmit} className={s.form}>
-                        <Headlines lowerLevel=' Sign In' />
+                        <Headlines Headlock lowerLevel=' Sign In' />
 
                         <p style={{ marginTop: '77px' }}>
                             <label className={s.label} htmlFor={`email`}>  Email</label><br />
@@ -88,8 +92,8 @@ export const Login = () => {
                             />
                             <span className={s.eye} onClick={handleClick}>
                                 {
-                                    eye ? <i className="fa fa-eye" />
-                                        : <i className="fa fa-eye-slash" />
+                                    eye ? <i className="fa fa-eye-slash" />
+                                        : <i className="fa fa-eye" />
                                 }
                             </span>
                         </p>

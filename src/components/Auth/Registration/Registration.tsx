@@ -63,7 +63,7 @@ export const Registration = () => {
                 {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                     <form onSubmit={handleSubmit} className={s.form}>
 
-                        <Headlines lowerLevel=' Sign Up' />
+                        <Headlines Headlock lowerLevel=' Sign Up' />
 
                         <p style={{ marginTop: '77px' }}>
                             <label className={s.label} htmlFor={`email`}>  Email</label><br />

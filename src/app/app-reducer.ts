@@ -1,3 +1,4 @@
+import { getAuthUserData } from "../components/Auth/auth-reducer";
 import { InferActionsTypes } from "./store";
 
 
@@ -31,9 +32,10 @@ export const actionsApp = {
 }
 
 
-export const initializeApp = () => (dispatch: any) => {
-    let promise = 2
-    // dispatch(getAuthUserData());
+export const initializeApp = () => async (dispatch: any) => {
+    console.log('dfg');
+
+    let promise = await dispatch(getAuthUserData());
 
     Promise.all([promise])
         .then(() => {

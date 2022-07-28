@@ -42,7 +42,7 @@ export const CreateNewPassword = () => {
                     {({ values, errors, touched, handleChange, handleBlur, isValid, handleSubmit, dirty }) => (
                         <form onSubmit={handleSubmit} className={styles.form}>
 
-                            <Headlines lowerLevel='Create new password' />
+                            <Headlines Headlock lowerLevel='Create new password' />
 
                             <p style={{ marginTop: '77px' }}>
                                 <label htmlFor={`secondName`}>password</label><br />

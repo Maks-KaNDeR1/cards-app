@@ -22,9 +22,8 @@
 	font-size: 15px;
 	line-height: 20px;
 	
-	opacity: 5;
-	/* identical to box height, or 154% */
 	color: #24254A;
+	opacity: 0.5;
 }
 
 .form p {
@@ -35,7 +34,7 @@
 .form input {
 	width: 339px;
 	border: none;
-	border-bottom: 1px solid #24254A;
+	border-bottom: 3px solid #bfbfbf;
 	background-color: transparent;
 	color: inherit;
 	outline: none;
@@ -43,6 +42,8 @@
 	z-index: 2;
 	position: relative;
 }
+
+
 .form input:nth-child(2) {
 	width: 129px;
 }
