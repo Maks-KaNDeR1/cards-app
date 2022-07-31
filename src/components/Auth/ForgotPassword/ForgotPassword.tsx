@@ -3,10 +3,11 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import styles from './ForgotPassword.module.css'
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { forgot } from '../auth-reducer';
 import MainButton from '../common/ButtonsForForms/MainButton';
 import Headlines from '../common/Headlines/Headlines';
+import { PATH } from '../../../utils/const-enum-path';
 
 
 export const ForgotPassword = () => {
@@ -60,7 +61,7 @@ export const ForgotPassword = () => {
 
                             <div>
                                 <MainButton
-                                    type={`submit`}
+                                    type='submit'
                                     title='Send Instructions'
                                     disabled={!isValid || !dirty}
                                     style={{
@@ -68,7 +69,7 @@ export const ForgotPassword = () => {
                                         marginLeft: '70px', width: '266px'
                                     }}
                                 />
-                                <a className={styles.logginLink} href='#/login' > Try logging in </a>
+                                <NavLink className={styles.logginLink} to={PATH.login} > Try logging in </NavLink>
                             </div>
                         </form>
                     )}

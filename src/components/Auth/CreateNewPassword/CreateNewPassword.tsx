@@ -58,7 +58,7 @@ export const CreateNewPassword = () => {
 
                             <div>
                                 <MainButton
-                                    type={`submit`}
+                                    type='submit'
                                     title='Create New Password'
                                     disabled={!isValid || !dirty}
                                     style={{

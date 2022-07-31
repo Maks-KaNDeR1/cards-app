@@ -28,12 +28,13 @@
 }
 
 .form p {
-	position: relative;
+	/* position: relative; */
 	margin-left: 33px;
 }
 
 
 .inputField {
+	/* position: relative; */
 	width: 339px;
 	
 	/* width: 339px; */
@@ -45,29 +46,29 @@
 	outline: none;
 	opacity: 0.8;
 	z-index: 2;
-	position: relative;
 }
 .form input:nth-child(2) {
 	width: 129px;
 }
 
 .eye {
+	position: absolute;
 	cursor: pointer;
-	position: absolute;
 	font-size: 16px;
-	position: absolute;
 	top: 19px;
 	padding: 1px 4px;
-	background: #ededf3b0;
-	border-bottom: 1px solid #24254A;
+    right: 41px;
+
+	color: #474747;
+	opacity: 0.8;
 } 
 
 
 .error {
+	position: absolute;
 	color: red;
 	font-size: 13px;
 	margin: -11px 1px 1px 33px;
-	position: absolute;
 }
 
 .account {

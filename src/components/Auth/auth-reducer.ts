@@ -1,29 +1,34 @@
 import { NavigateFunction } from "react-router-dom";
-import { authAPI } from "../../api/cards-api";
+import { authAPI, ResponseDataLoginOrAuthMe } from "../../api/api";
 import { actionsApp } from "../../app/app-reducer";
 import { AppThunk, InferActionsTypes } from "../../app/store";
 
 
-let initialState = {
-    id: null,
+export type InitialStateType = ResponseDataLoginOrAuthMe & { isAuth: boolean };
+
+let initialState: InitialStateType = {
+    _id: null,
     email: null,
-    login: null,
-    isAuth: false
+    name: null,
+    avatar: null,
+    publicCardPacksCount: null,
+    created: null,
+    isAdmin: null,
+    rememberMe: null,
+    token: null,
+    updated: null,
+    verified: null,
+    isAuth: false,
+    error: null
 };
+
 
 
 // export type InitialStateType = typeof initialState;
 export type AuthActionsType = InferActionsTypes<typeof actions>
 
-export type InitialStateType = {
-    id: number | null
-    email: string | null
-    login: string | null
-    isAuth: boolean
-}
 
-
-export const authReducer = (state: InitialStateType = initialState, action: AuthActionsType): InitialStateType => {
+export const authReducer = (state = initialState, action: AuthActionsType): InitialStateType => {
     switch (action.type) {
         case 'AUTH/SET_USER_DATA':
             return {
@@ -38,37 +43,84 @@ export const authReducer = (state: InitialStateType = initialState, action: Auth
 
 export const actions = {
     setAuthUserData: (
-        id: number | null,
+        _id: string | null,
         email: string | null,
-        login: string | null,
+        name: string | null,
+        avatar: string | null,
+        publicCardPacksCount: number | null,
+        created: string | null,
+        isAdmin: boolean | null,
+        rememberMe: boolean | null,
+        token: string | null,
+        updated: string | null,
+        verified: boolean | null,
         isAuth: boolean
-    ) => ({ type: 'AUTH/SET_USER_DATA', payload: { id, email, login, isAuth } } as const)
+    ) => ({
+        type: 'AUTH/SET_USER_DATA', payload: {
+            _id,
+            email,
+            name,
+            avatar,
+            publicCardPacksCount,
+            created,
+            isAdmin,
+            rememberMe,
+            token,
+            updated,
+            verified,
+            isAuth,
+        }
+    } as const)
 }
 
 
 export const getAuthUserData = (): AppThunk => async (dispatch) => {
     const res = await authAPI.me();
 
-    console.log('getAuthUserData', res);
+    console.log('getAuthUserData', res.data);
 
     // if (res.data.resultCode === 0) {
-    let { id, email, login } = res.data.data;
-    dispatch(actions.setAuthUserData(id, email, login, true));
+    let {
+        _id,
+        email,
+        name,
+        avatar,
+        publicCardPacksCount,
+        created,
+        isAdmin,
+        rememberMe,
+        token,
+        updated,
+        verified,
+
+    } = res.data;
+    dispatch(actions.setAuthUserData(_id,
+        email,
+        name,
+        avatar,
+        publicCardPacksCount,
+        created,
+        isAdmin,
+        rememberMe,
+        token,
+        updated,
+        verified,
+        true));
     // }
 }
 
 
 
-export const login = (data: any): AppThunk => async (dispatch) => {
+export const login = (email: string, password: string, rememberMe: boolean): AppThunk => async (dispatch) => {
     dispatch(actionsApp.setStatus(true))
     try {
-        const res = await authAPI.login(data)
+        const res = await authAPI.login(email, password, rememberMe)
         // dispatch(setIsLoggedIntrue))
         // dispatch(userLogin(res.data))
         // dispatch(logged(true))
 
 
-        console.log('login', res);
+        console.log('login', res.data);
 
         if (res.data) {
             dispatch(getAuthUserData())
@@ -95,10 +147,10 @@ export const logout = (): AppThunk => async (dispatch) => {
         const res = await authAPI.logout()
         // dispatch(loggedAC(false))
 
-        console.log('logout', res);
+        console.log('logout', res.data);
 
         if (res.data) {
-            dispatch(actions.setAuthUserData(null, null, null, false))
+            dispatch(actions.setAuthUserData(null, null, null, null, null, null, null, null, null, null, null, false))
         }
     }
     catch (err) {

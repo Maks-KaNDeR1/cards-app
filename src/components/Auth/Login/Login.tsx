@@ -8,6 +8,7 @@ import Headlines from '../common/Headlines/Headlines';
 import { login } from '../auth-reducer';
 import MainButton from '../common/ButtonsForForms/MainButton';
 import { Checkbox } from 'antd';
+import { PATH } from '../../../utils/const-enum-path';
 
 
 export const Login = () => {
@@ -32,21 +33,16 @@ export const Login = () => {
     type SubmitHandlerType = {
         email: string
         password: string
-        remember: false
+        rememberMe: false
     }
 
     const submitHandler = (values: SubmitHandlerType) => {
-        const data = (
-            values.email,
-            values.password,
-            values.remember
-        )
-        dispatch(login(data))
+        dispatch(login(values.email, values.password, values.rememberMe))
     }
 
-    // if (isAuth) {
-    //     return <Navigate to={`/profile`} />
-    // }
+    if (isAuth) {
+        return <Navigate to={PATH.profile} />
+    }
 
     return (
         <div className={s.loginBlock}>
@@ -54,7 +50,7 @@ export const Login = () => {
                 initialValues={{
                     email: '',
                     password: '',
-                    remember: false
+                    rememberMe: false
                 }}
                 validateOnBlur
                 onSubmit={submitHandler}
@@ -99,21 +95,23 @@ export const Login = () => {
                         </p>
                         {touched.password && errors.password && <p className={s.error}>{errors.password}</p>}
 
-                        <p style={{ marginTop: '4px' }}>
+                        <p style={{ marginTop: '22px' }}>
                             <Checkbox
                                 name={`remember`}
                                 onChange={handleChange}
-                                value={values.remember}
+                            // value={checked}
+                            // value={values.remember}
                             >Remember me</Checkbox>
                         </p>
-                        <a style={{ marginLeft: '35px' }} href='#/forgot' > forgot password? </a>
+                        <NavLink style={{ marginLeft: '35px' }} to={PATH.forgotPassword}>forgot password?</NavLink>
 
                         <MainButton
                             title='Login'
+                            type='submit'
                             style={{ margin: '23px 0 0 70px ', width: '266px' }}
                         />
                         <div className={s.account}>
-                            <NavLink to={'/registration'}>Don`t have an account?</NavLink>
+                            <NavLink to={PATH.registration}>Don`t have an account?</NavLink>
                         </div>
                     </form>
                 )}

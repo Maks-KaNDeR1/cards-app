@@ -7,6 +7,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../utils/hook';
 import Headlines from '../common/Headlines/Headlines';
 import ButtonsForForms from '../common/ButtonsForForms/ButtonsForForms';
+import { PATH } from '../../../utils/const-enum-path';
 
 export const Registration = () => {
 
@@ -125,8 +126,8 @@ export const Registration = () => {
                             disabledMain={!isValid || !dirty}
 
                             title='Cancel'
-                            type="button"
-                            handleClick={() => navigate("/login")}
+                            type='button'
+                            handleClick={() => navigate(PATH.login)}
                         />
                     </form>
                 )}

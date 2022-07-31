@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from '../utils/hook';
 import { Spin } from 'antd';
 import { Profile } from '../components/Profile/Profile';
 import { PATH } from '../utils/const-enum-path';
+import { ErrorSnackbar } from '../components/ErrorSnackbar/ErrorSnackbar';
 
 function App() {
 
@@ -26,28 +27,22 @@ function App() {
 
   }, [])
 
-  // if (!isInitialized) {
-  //   return <div
-  //     style={{ position: 'fixed', top: '30%', textAlign: 'center', width: '100%' }}>
-  //     <Spin size='large' />
-  //   </div>
-  // }
+  if (statusLoading) {
+    return <div
+      style={{ position: 'absolute', top: '30%', textAlign: 'center', width: '100%' }}>
+      <Spin size='large' />
+    </div>
+  }
 
 
   return (
     <div className="App">
-      {statusLoading && <Spin size='large' />}
-      <Profile />
-      <Login />
-      <Registration />
-      <ForgotPassword />
-      <CreateNewPassword />
-      <CheckEmail />
+      <ErrorSnackbar />
       <Routes>
         <Route path={'/'} element={<Navigate to={PATH.profile} />} />
+        <Route path={PATH.profile} element={<Profile />} />
         <Route path={PATH.login} element={<Login />} />
         <Route path={PATH.registration} element={<Registration />} />
-        <Route path={PATH.profile} element={<Profile />} />
         {/* <Route path={PATH.packsList} element={<PacksList/>}/> */}
         {/* <Route path={PATH.error} element={<Error404/>}/> */}
         <Route path={PATH.forgotPassword} element={<ForgotPassword />} />

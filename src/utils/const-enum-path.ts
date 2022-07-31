@@ -5,7 +5,7 @@ export const PATH = {
     profile: '/profile',
     packsList: 'packsList',
     error: '/404',
-    forgotPassword: '/recPas',
+    forgotPassword: '/forgot',
     newPassword: '/set-new-password',
     checkEmail: '/checkEmail',
     cardsPack: '/cardsPage',
