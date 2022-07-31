@@ -37,8 +37,6 @@ export const authAPI = {
     registration(email: string, password: string) {
         return instance.post('auth/register', { email, password })
     },
-    // login(email: string, password: string, rememberMe: boolean) {
-    // return instance.post(`auth/login`, { email, password, rememberMe })
     login(email: string, password: string, rememberMe: boolean) {
         return instance.post('auth/login', { email, password, rememberMe })
     },

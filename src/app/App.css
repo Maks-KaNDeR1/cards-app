@@ -1,8 +1,7 @@
-
-  body {
-    min-height: 100vh;
-    background: linear-gradient(180deg, #E6D4DE 0%, #9890C7 100%);
-  }
+body {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #E6D4DE 0%, #9890C7 100%);
+}
 
 
 
@@ -10,4 +9,19 @@ a {
   text-decoration: none;
   margin: 0 20px 0 20px;
   color: rgb(74, 1, 1);
+}
+
+.editable-row .ant-form-item-explain {
+  position: absolute;
+  top: 100%;
+  font-size: 12px;
+}
+
+.ant-pagination-item {
+  padding: 1px 3px;
+}
+
+.ant-pagination-item a {
+  padding: none;
+  margin: 0 7px 0 7px;
 }

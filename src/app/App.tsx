@@ -13,6 +13,7 @@ import { Spin } from 'antd';
 import { Profile } from '../components/Profile/Profile';
 import { PATH } from '../utils/const-enum-path';
 import { ErrorSnackbar } from '../components/ErrorSnackbar/ErrorSnackbar';
+import CardsPack from '../components/CardsPack/CardsPack';
 
 function App() {
 
@@ -40,7 +41,8 @@ function App() {
       <ErrorSnackbar />
       <Routes>
         <Route path={'/'} element={<Navigate to={PATH.profile} />} />
-        <Route path={PATH.profile} element={<Profile />} />
+        {/* <Route path={PATH.profile} element={<Profile />} /> */}
+        <Route path={PATH.profile} element={<CardsPack />} />
         <Route path={PATH.login} element={<Login />} />
         <Route path={PATH.registration} element={<Registration />} />
         {/* <Route path={PATH.packsList} element={<PacksList/>}/> */}

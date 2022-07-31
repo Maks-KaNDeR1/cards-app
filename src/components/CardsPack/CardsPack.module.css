@@ -1,0 +1,114 @@
+.cardsBlock {
+    position: relative;
+    width: 1280px;
+    height: 720px;
+}
+
+.cardsForm {
+    position: absolute;
+    width: 1008px;
+    height: 636px;
+    left: 136px;
+    top: 84px;
+
+    background: #FEFEFF;
+    border-radius: 8px;
+
+    display: grid;
+    grid-template-areas: "p c c"
+        "n c c"
+        "n c c";
+
+}
+
+.profileBlock {
+    grid-area: p;
+
+    width: 243px;
+    height: 216px;
+    text-align: center;
+
+    background: #D9D9F1;
+}
+
+.profileBlock img {
+    margin-top: 24px;
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    /* margin: 24px 72px 0 75px; */
+}
+
+.numberOfCardsBlock {
+    grid-area: n;
+
+    padding: 24px;
+    width: 243px;
+    height: 420px;
+
+    background: #ECECF9;
+}
+.numberOfCardsBlock span {
+    /* font-family: 'SF UI Display'; */
+    /* font-style: normal; */
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+       
+    color: #2D2E46;
+}
+
+.cardsBoardBlock {
+    grid-area: c;
+
+    padding: 24px 48px;
+
+    background: #fff;
+}
+
+.searchInput {
+    box-sizing: border-box;
+    width: 669px;
+    height: 36px;
+    
+    margin-top: 24px;
+
+    /* position: absolute; */
+    /* left: 33.36%;
+    right: 14.38%;
+    top: 19.72%;
+    bottom: 75.73%; */
+
+    /* background-color: #ECECF9; */
+    /* opacity: 0.5; */
+    /* border: 1px solid #635D80; */
+    border-radius: 2px;
+
+}
+
+.packCardsBlock {
+    width: 669px;
+    margin-top: 24px;
+
+    box-shadow: -1px 3px 7px 1px #e1dede;
+
+}
+
+.packCards {
+    height: 48px;
+    padding: 14px;
+
+}
+
+.pagination {
+    margin-top: 24px;
+
+}
+
+.headerPackCards {
+    height: 48px;
+    padding: 14px;
+
+    background: #ECECF9;
+}

@@ -1,61 +1,16 @@
-export type LoginParamsType = {
-    email: string
-    password: string
-    rememberMe: boolean
-    captcha?: string
-}
-// types
-export type TodolistType = {
-    id: string
-    title: string
-    addedDate: string
-    order: number
-}
-export type FieldErrorType = { field: string; error: string }
-export type ResponseType<D = {}> = {
-    resultCode: number
-    messages: Array<string>
-    fieldsErrors?: Array<FieldErrorType>
-    data: D
-}
 
-export enum TaskStatuses {
-    New = 0,
-    InProgress = 1,
-    Completed = 2,
-    Draft = 3
-}
 
-export enum TaskPriorities {
-    Low = 0,
-    Middle = 1,
-    Hi = 2,
-    Urgently = 3,
-    Later = 4
-}
-
-export type TaskType = {
-    description: string
-    title: string
-    status: TaskStatuses
-    priority: TaskPriorities
-    startDate: string
-    deadline: string
-    id: string
-    todoListId: string
-    order: number
-    addedDate: string
-}
-export type UpdateTaskModelType = {
-    title: string
-    description: string
-    status: TaskStatuses
-    priority: TaskPriorities
-    startDate: string
-    deadline: string
-}
-export type GetTasksResponse = {
-    error: string | null
-    totalCount: number
-    items: TaskType[]
+export type ResponseDataLoginOrAuthMe = {
+    _id: string | null// "62 77c910e473c50a5ce94696"
+    email: string | null// "kanderskymaks@gmail.com"
+    name: string | null// "kanderskymaks"
+    avatar: string | null
+    publicCardPacksCount: number | null// 6
+    created: string | null// "2022-05-08T13:43:44.171Z"
+    isAdmin: boolean | null//false
+    rememberMe: boolean | null//false
+    token: string | null// "70d22300-10b8-11ed-af3e-430c3f52cfdf"
+    updated: string | null// "2022-07-31T10:06:27.121Z"
+    verified: boolean | null
+    error?: string | null
 }
