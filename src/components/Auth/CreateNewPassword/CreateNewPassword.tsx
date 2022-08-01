@@ -3,7 +3,7 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import styles from './CreateNewPassword.module.css'
 import { useParams } from 'react-router-dom';
-import { setNewPassword } from '../auth-reducer';
+import { setNewPassword } from '../../../store-reducers/auth-reducer';
 import Headlines from '../common/Headlines/Headlines';
 import MainButton from '../common/ButtonsForForms/MainButton';
 import { useAppDispatch } from '../../../utils/hook';

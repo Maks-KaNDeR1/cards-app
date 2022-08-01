@@ -5,7 +5,7 @@ import s from './Login.module.css';
 import { Navigate, NavLink } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../utils/hook';
 import Headlines from '../common/Headlines/Headlines';
-import { login } from '../auth-reducer';
+import { login } from '../../../store-reducers/auth-reducer';
 import MainButton from '../common/ButtonsForForms/MainButton';
 import { Checkbox } from 'antd';
 import { PATH } from '../../../utils/const-enum-path';

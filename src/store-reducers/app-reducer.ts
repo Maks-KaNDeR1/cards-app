@@ -1,9 +1,8 @@
-import { getAuthUserData } from "../components/Auth/auth-reducer";
+import { getAuthUserData } from "./auth-reducer";
 import { InferActionsTypes } from "./store";
 
 
 let initialState = {
-    initialized: false,
     statusLoading: false,
     error: ''
 };
@@ -14,8 +13,6 @@ export type AppActionsType = InferActionsTypes<typeof actionsApp>
 
 const appReducer = (state = initialState, action: AppActionsType): InitialStateType => {
     switch (action.type) {
-        case 'APP/INITIALIZED_SUCCESS':
-            return { ...state, initialized: true }
         case 'APP/SET-STATUS':
             return { ...state, statusLoading: action.status }
         case 'APP/ERROR_MESSAGE':
@@ -26,21 +23,8 @@ const appReducer = (state = initialState, action: AppActionsType): InitialStateT
 }
 
 export const actionsApp = {
-    initializedSuccess: () => ({ type: 'APP/INITIALIZED_SUCCESS' } as const),
     setStatus: (status: boolean) => ({ type: 'APP/SET-STATUS', status } as const),
     errorMessage: (error: string) => ({ type: 'APP/ERROR_MESSAGE', error } as const)
-}
-
-
-export const initializeApp = () => async (dispatch: any) => {
-    console.log('dfg');
-
-    let promise = await dispatch(getAuthUserData());
-
-    Promise.all([promise])
-        .then(() => {
-            dispatch(actionsApp.initializedSuccess());
-        });
 }
 
 

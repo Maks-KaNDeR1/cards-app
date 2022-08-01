@@ -14,3 +14,15 @@ export type ResponseDataLoginOrAuthMe = {
     verified: boolean | null
     error?: string | null
 }
+
+
+export type getPacksDataType = {
+    packName?: string, // не обязательно
+    min?: number, // не обязательно
+    max?: number, // не обязательно
+    sortPacks?: string, //"0updated" // не обязательно
+    page?: number, // не обязательно
+    pageCount?: number, // не обязательно
+    user_id?: string,  // чьи колоды не обязательно, или прийдут все
+}
+

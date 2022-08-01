@@ -1,23 +1,19 @@
-import React, { CSSProperties } from 'react'
-import { useAppSelector } from '../../utils/hook'
-import s from './CardsPack.module.css'
-import profileAvatar from '../../assests/avatar.png'
+import React, { useEffect } from 'react'
+import { useAppDispatch, useAppSelector } from '../../utils/hook'
+import s from './PackList.module.css'
 import { Input, Pagination, PaginationProps } from 'antd'
 import { Slider } from 'antd'
+import { getPacks } from '../../store-reducers/packs-reducer'
 
 
-const Profile = () => {
-
-    const { avatar, name } = useAppSelector(state => state.auth)
+const ButtonsShowMyOrAllPaks = () => {
 
     return (
-        <div className={s.profileBlock} >
-            <img src={avatar ? avatar : profileAvatar} alt='' />
-            {/* <h2>{name}</h2> */}
-            <h2>Maks</h2>
-            <span style={{ color: '#2D2E46', opacity: '0.5' }} >Front-end developer</span>
+        <div className={s.buttonsBlock} >
+            <h2>Show packs cards</h2>
             <div>
-                <button> Edit profile</button>
+                <button>My</button>
+                <button>All</button>
             </div>
         </div>
     )
@@ -41,8 +37,6 @@ const NumberOfCards = () => {
 
 const CardsBoard = () => {
 
-    const { name } = useAppSelector(state => state.auth)
-
     const onChange: PaginationProps['onChange'] = (page, pageSize) => {
         // onPageChanged(page, pageSize);
     };
@@ -51,8 +45,7 @@ const CardsBoard = () => {
 
     return (
         <div className={s.cardsBoardBlock} >
-            <h1>Packs list Maks’s</h1>
-            {/* <h1>Packs list {name}’s</h1> */}
+            <h1>Packs list</h1>
             <div className={s.searchInput}>
                 {/* debounce */}
                 <Input type="search" placeholder='Search...' />
@@ -96,11 +89,20 @@ const CardsBoard = () => {
     )
 }
 
-const CardsPack = () => {
+const PacksList = () => {
+
+    let dispatch = useAppDispatch()
+    useEffect(() => {
+        dispatch(getPacks())
+
+    }, [])
+
+
+
     return (
         <div className={s.cardsBlock}>
             <div className={s.cardsForm}>
-                <Profile />
+                <ButtonsShowMyOrAllPaks />
                 <NumberOfCards />
                 <CardsBoard />
             </div>
@@ -108,4 +110,4 @@ const CardsPack = () => {
     )
 }
 
-export default CardsPack
+export default PacksList

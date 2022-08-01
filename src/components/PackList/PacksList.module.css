@@ -21,47 +21,39 @@
 
 }
 
-.profileBlock {
+.buttonsBlock {
     grid-area: p;
 
     width: 243px;
     height: 216px;
     text-align: center;
 
-    background: #D9D9F1;
+    background: #ECECF9;
 }
 
-.profileBlock img {
-    margin-top: 24px;
-    width: 96px;
-    height: 96px;
-    border-radius: 50%;
-    /* margin: 24px 72px 0 75px; */
+.buttonsBlock h2 {
+    margin: 0;
+
 }
 
-.profileBlock h2 {
-   margin: 0;
-   
-}
-
-.profileBlock button {
+.buttonsBlock button {
     cursor: pointer;
-margin-top: 6px;
+    margin-top: 6px;
     width: 75px;
     height: 24px;
 
     border: 1px solid #9f9fb6;
     background-color: #D9D9F1;
-border-radius: 2px;
+    border-radius: 2px;
 
     font-weight: 600;
-font-size: 12px;
-line-height: 14px;
-/* identical to box height */
+    font-size: 12px;
+    line-height: 14px;
+    /* identical to box height */
 
-text-align: center;
+    text-align: center;
 
-color: #21268F;
+    color: #21268F;
 }
 
 .numberOfCardsBlock {
@@ -147,7 +139,7 @@ color: #21268F;
 }
 
 .packCards {
-    
+
     display: flex;
 }
 
@@ -185,7 +177,7 @@ color: #21268F;
     /* background-color: #D9D9F1; */
     color: #21268F;
     background-image: linear-gradient(to right,
-    #D9D9F1 0%, #D9D9F1 51%, #ECECF9  100%);
+            #D9D9F1 0%, #D9D9F1 51%, #ECECF9 100%);
     transition: .5s;
     background-size: 200% auto;
 
@@ -193,12 +185,12 @@ color: #21268F;
 
 .buttonsDelete {
     color: #fff;
-    background-image: linear-gradient(to right, #dd4b43 0%, #eb574f 51%, #ff0d00  100%);
+    background-image: linear-gradient(to right, #dd4b43 0%, #eb574f 51%, #ff0d00 100%);
     transition: .5s;
     background-size: 200% auto;
 }
 
 .actions button:hover {
     /* color: #21268F; */
-	background-position: right center;
+    background-position: right center;
 }

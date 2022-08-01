@@ -4,7 +4,7 @@ import * as yup from 'yup'
 import styles from './ForgotPassword.module.css'
 import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { forgot } from '../auth-reducer';
+import { forgot } from '../../../store-reducers/auth-reducer';
 import MainButton from '../common/ButtonsForForms/MainButton';
 import Headlines from '../common/Headlines/Headlines';
 import { PATH } from '../../../utils/const-enum-path';

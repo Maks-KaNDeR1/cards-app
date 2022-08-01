@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import s from './Registration.module.css'
-import { registration } from '../auth-reducer';
+import { registration } from '../../../store-reducers/auth-reducer';
 import { Navigate, useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../utils/hook';
 import Headlines from '../common/Headlines/Headlines';

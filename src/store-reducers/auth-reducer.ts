@@ -1,7 +1,8 @@
 import { NavigateFunction } from "react-router-dom";
-import { authAPI, ResponseDataLoginOrAuthMe } from "../../api/api";
-import { actionsApp } from "../../app/app-reducer";
-import { AppThunk, InferActionsTypes } from "../../app/store";
+import { authAPI } from "../api/api";
+import { ResponseDataLoginOrAuthMe } from "../api/types";
+import { actionsApp } from "./app-reducer";
+import { AppThunk, InferActionsTypes } from "./store";
 
 
 export type InitialStateType = ResponseDataLoginOrAuthMe & { isAuth: boolean };
